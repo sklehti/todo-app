@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.reorder-list {
+  padding: 50px 0 50px 0;
+}

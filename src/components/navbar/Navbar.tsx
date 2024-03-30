@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div className="flex justify-between flex-row mt-10 mb-6">
       <h1 className="text-2xl font-semibold text-white">TODO</h1>
-      <button>
+      <button className="w-5 h-5">
         <img src={lightModeIcon} alt="ligth mode icon" />
       </button>
     </div>

@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.todo-input {
+  padding-left: 60px;
+}
+
+.checkbox-input:checked ~ .checkmark {
+  background-image: url();
+  background: linear-gradient(to bottom right, #57ddff, #c058f3);
+}
