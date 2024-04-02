@@ -2,11 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-.todo-input {
-  padding-left: 60px;
-}
+@layer base {
+  .todo-input {
+    padding-left: 60px;
+  }
+  .todo-input:checked {
+    color: red;
+  }
 
-.checkbox-input:checked ~ .checkmark {
-  background-image: url();
-  background: linear-gradient(to bottom right, #57ddff, #c058f3);
+  .checkbox-input:checked ~ .checkmark {
+    background-image: url();
+    background: linear-gradient(to bottom right, #57ddff, #c058f3);
+  }
 }

@@ -14,14 +14,3 @@ export interface AllNotesWithStateHandling {
   showNotes: Note[];
   setShowNotes: React.Dispatch<React.SetStateAction<Note[]>>;
 }
-
-// export enum Status {
-//   All = "all",
-//   Active = "active",
-//   Completed = "completed",
-// }
-
-// export interface StatusHandling {
-//   status: Status;
-//   setStatus: React.Dispatch<React.SetStateAction<Status>>;
-// }

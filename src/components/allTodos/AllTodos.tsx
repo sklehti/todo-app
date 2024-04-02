@@ -32,20 +32,20 @@ const AllTodos = ({
   };
 
   return (
-    <div className="my-6 rounded-md bg-white box-border">
+    <div className="my-6 rounded-md bg-white dark:bg-gray-700 box-border">
       {showNotes.map((n, index) => (
         <React.Fragment key={index}>
           <div className="flex flex-row justify-between">
             <div className="relative flex justify-center flex-col">
-              <p
-                className="p-5 x-2 pl-16  todo-input line-through"
-                style={{
-                  textDecoration: n.checked ? "line-through" : "none",
-                  color: n.checked ? "rgb(229 231 235)" : "hsl(237, 14%, 26%)",
-                }}
-              >
-                {n.note}
-              </p>
+              {n.checked ? (
+                <p className="p-5 x-2 pl-16  todo-input line-through text-gray-200 dark:text-gray-400">
+                  {n.note}
+                </p>
+              ) : (
+                <p className="p-5 x-2 pl-16  todo-input text-gray-800 dark:text-gray-200">
+                  {n.note}
+                </p>
+              )}
               <div className="absolute cursor-pointer text-xl select-none pl-5 flex justify-center flex-col">
                 <input
                   readOnly
@@ -60,7 +60,11 @@ const AllTodos = ({
                   onClick={handleCheckbox}
                   className="absolute h-5 w-5 rounded-full border hover:bg-gray-200 flex items-center justify-center checkmark"
                 >
-                  <img src={checkIcon} alt="checkmark icon" />
+                  <img
+                    src={checkIcon}
+                    alt="checkmark icon"
+                    style={n.checked ? {} : { display: "none" }}
+                  />
                 </div>
               </div>
             </div>
@@ -73,7 +77,7 @@ const AllTodos = ({
               <img src={crossIcon} className="w-3 h-3" alt="delete button" />
             </button>
           </div>
-          <hr />
+          <hr className="dark:border-[#777A92]" />
         </React.Fragment>
       ))}
 

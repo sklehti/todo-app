@@ -8,7 +8,7 @@ const SelectedNotesLayout = ({
   setShowNotes,
 }: AllNotesWithStateHandling) => {
   return (
-    <div className="relative flex justify-center  flex-row rounded-md w-full p-5 x-2 bg-white font-semibold lg:hidden">
+    <div className="relative flex justify-center  flex-row rounded-md w-full p-5 x-2 bg-white font-semibold lg:hidden dark:bg-gray-700">
       <SelectedNotes
         notes={notes}
         setNotes={setNotes}

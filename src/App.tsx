@@ -4,7 +4,7 @@ import Navbar from "./components/navbar/Navbar";
 import "./styles.css";
 import AddTodo from "./components/addTodo/AddTodo";
 import AllTodos from "./components/allTodos/AllTodos";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Note } from "./types";
 import ReorderList from "./components/reorderList/ReorderList";
 import SelectedNotesLayout from "./components/selectedNotes/SelectedNotesLayout";
@@ -12,7 +12,6 @@ import SelectedNotesLayout from "./components/selectedNotes/SelectedNotesLayout"
 function App() {
   const [notes, setNotes] = useState<Note[]>([]);
   const [showNotes, setShowNotes] = useState<Note[]>([]);
-  // const [status, setStatus] = useState<Status>(Status.All);
 
   return (
     <div className="font-josefin m-0 p-0 w-screen h-screen box-border bg-gray-100  dark:bg-gray-900 dark:text-white text-dark-grayish-blue">
@@ -42,12 +41,14 @@ function App() {
             showNotes={showNotes}
             setShowNotes={setShowNotes}
           />
+
           <SelectedNotesLayout
             notes={notes}
             setNotes={setNotes}
             showNotes={showNotes}
             setShowNotes={setShowNotes}
           />
+
           <ReorderList />
         </div>
       </div>
