@@ -40,6 +40,10 @@ const AddTodo = ({
             })
           )
         );
+        console.log(
+          JSON.parse(localStorage.getItem("notes") || "''"),
+          "localstorage"
+        );
       }
 
       setNewNote("");
