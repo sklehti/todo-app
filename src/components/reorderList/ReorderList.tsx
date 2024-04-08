@@ -1,13 +1,12 @@
 import "./ReorderList.css";
 
 const ReorderList = () => {
-  // TODO:
   return (
-    <div className="flex justify-center">
-      <p className="text-gray-400 reorder-list">
+    <section className="flex justify-center">
+      <p className="text-gray-500 reorder-list font-bold text-xl">
         Drag and drop the reorder list...
       </p>
-    </div>
+    </section>
   );
 };
 

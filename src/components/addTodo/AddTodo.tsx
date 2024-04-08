@@ -1,8 +1,7 @@
 import "./AddTodo.css";
-import checkIcon from "../../assets/images/icon-check.svg";
 import { useState } from "react";
 import { AllNotesWithStateHandling } from "../../types";
-import { toNewNote } from "../../utils";
+import { parseNumber, toNewNote } from "../../utils";
 
 const AddTodo = ({
   notes,
@@ -13,32 +12,39 @@ const AddTodo = ({
   const [newNote, setNewNote] = useState<string>("");
 
   const handleNote = () => {
-    if (newNote.trim().length > 0) {
-      const note = toNewNote({ note: newNote, checked: false });
+    try {
+      if (toNewNote({ note: newNote, checked: false })) {
+        setNotes(
+          notes.concat({
+            id: parseNumber(notes.length),
+            note: newNote,
+            checked: false,
+          })
+        );
 
-      setNotes(
-        notes.concat({
-          note: newNote,
-          checked: false,
-        })
-      );
+        setShowNotes(
+          notes.concat({
+            id: parseNumber(notes.length),
+            note: newNote,
+            checked: false,
+          })
+        );
+      }
 
-      setShowNotes(
-        notes.concat({
-          note: newNote,
-          checked: false,
-        })
-      );
+      setNewNote("");
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        alert(error.message);
+      }
     }
-
-    setNewNote("");
   };
 
   return (
-    <div className="relative flex justify-center flex-col">
+    <section className="relative flex justify-center flex-col">
       <input
+        autoFocus
         type="text"
-        className="w-full p-5 x- pl-16 rounded-md todo-input dark:bg-gray-700"
+        className="p-5 pl-16 rounded-md todo-input dark:bg-gray-700  outline-gray-700  focus:outline focus:outline-2 focus:outline-offset-1 focus:input-layout"
         placeholder="Create a new todo..."
         value={newNote}
         onChange={({ target }) => setNewNote(target.value)}
@@ -51,7 +57,7 @@ const AddTodo = ({
           {/* <img src={checkIcon} alt="checkmark icon" /> */}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

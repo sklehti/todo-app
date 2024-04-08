@@ -1,6 +1,14 @@
 export interface Note {
+  id: number;
   note: string;
   checked: boolean;
+}
+
+export type NoteWithoutId = Omit<Note, "id">;
+
+export interface DragAndDrop {
+  reodredList: Note[];
+  setReodredList: React.Dispatch<React.SetStateAction<Note[]>>;
 }
 
 export interface AllNotes {

@@ -32,19 +32,19 @@ const SelectedNotes = ({
     <>
       <button
         onClick={handleAll}
-        className="px-3  text-gray-300 focus:text-indigo-500 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:text-indigo-500"
+        className="px-3  text-gray-500 focus:text-indigo-500 hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-400 dark:focus:text-indigo-500"
       >
         All
       </button>
       <button
         onClick={handleActive}
-        className="px-3  text-gray-300 focus:text-indigo-500 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-400 dark:focus:text-indigo-500"
+        className="px-3  text-gray-500 focus:text-indigo-500 hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-400 dark:focus:text-indigo-500"
       >
         Active
       </button>
       <button
         onClick={handleCompleted}
-        className="px-3  text-gray-300 focus:text-indigo-500 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:text-indigo-500"
+        className="px-3  text-gray-500 focus:text-indigo-500 hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-400 dark:focus:text-indigo-500"
       >
         Completed
       </button>
