@@ -42,8 +42,10 @@ const MainPage = () => {
     const storageNotes: Note[] = JSON.parse(
       localStorage.getItem("notes") || '""'
     );
-    setShowNotes(storageNotes);
-    setNotes(storageNotes);
+    if (storageNotes.length > 0) {
+      setShowNotes(storageNotes);
+      setNotes(storageNotes);
+    }
   }, []);
 
   return (
