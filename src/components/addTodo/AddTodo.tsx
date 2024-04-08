@@ -15,6 +15,8 @@ const AddTodo = ({
     try {
       const checkNoteTyping = toNewNote({ note: newNote, checked: false });
       if (checkNoteTyping) {
+        console.log(showNotes);
+
         setNotes(
           notes.concat({
             id: parseNumber(notes.length),
@@ -40,10 +42,6 @@ const AddTodo = ({
               checked: false,
             })
           )
-        );
-        console.log(
-          JSON.parse(localStorage.getItem("notes") || "''"),
-          "localstorage"
         );
       }
 
