@@ -11,6 +11,8 @@ const AddTodo = ({
 }: AllNotesWithStateHandling) => {
   const [newNote, setNewNote] = useState<string>("");
 
+  console.log(showNotes);
+
   const handleNote = () => {
     try {
       if (toNewNote({ note: newNote, checked: false })) {

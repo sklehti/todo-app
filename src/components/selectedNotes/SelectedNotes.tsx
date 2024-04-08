@@ -1,11 +1,6 @@
-import { AllNotesWithStateHandling, Note } from "../../types";
+import { Note, SelectedNotesProp } from "../../types";
 
-const SelectedNotes = ({
-  notes,
-  setNotes,
-  showNotes,
-  setShowNotes,
-}: AllNotesWithStateHandling) => {
+const SelectedNotes = ({ notes, setShowNotes }: SelectedNotesProp) => {
   const newArray: Note[] = [];
 
   const handleAll = () => {

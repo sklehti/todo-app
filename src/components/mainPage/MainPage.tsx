@@ -82,12 +82,7 @@ const MainPage = () => {
               setShowNotes={setShowNotes}
             />
 
-            <SelectedNotesLayout
-              notes={notes}
-              setNotes={setNotes}
-              showNotes={showNotes}
-              setShowNotes={setShowNotes}
-            />
+            <SelectedNotesLayout notes={notes} setShowNotes={setShowNotes} />
 
             <ReorderList />
           </main>

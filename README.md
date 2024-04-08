@@ -2,7 +2,18 @@
 
 This is a solution to the [Todo app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW).
 
-### Users should be able to:
+## Links
+
+- Live Site URL: [todo-app](ADD LINK HERE!!!)
+
+## Built with
+
+- Mobile-first workflow
+- React
+- Typescript
+- Tailwind
+
+## Users should be able to:
 
 - View the optimal layout for the app depending on their device's screen size
 - See hover states for all interactive elements on the page
@@ -13,17 +24,6 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 - Clear all completed todos
 - Toggle light and dark mode
 - Drag and drop to reorder items on the list
-
-### Links
-
-- Live Site URL: [todo-app](ADD LINK HERE!!!)
-
-### Built with
-
-- Mobile-first workflow
-- React
-- Typescript
-- Tailwind
 
 ## To run locally
 

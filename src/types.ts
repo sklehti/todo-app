@@ -22,3 +22,8 @@ export interface AllNotesWithStateHandling {
   showNotes: Note[];
   setShowNotes: React.Dispatch<React.SetStateAction<Note[]>>;
 }
+
+export interface SelectedNotesProp {
+  notes: Note[];
+  setShowNotes: React.Dispatch<React.SetStateAction<Note[]>>;
+}
