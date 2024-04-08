@@ -11,6 +11,8 @@ const TodosInfo = ({
     const newArray = notes.filter((n) => !n.checked);
     setShowNotes(newArray);
     setNotes(newArray);
+
+    localStorage.setItem("notes", JSON.stringify(newArray));
   };
 
   console.log(showNotes);

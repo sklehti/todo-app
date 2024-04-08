@@ -30,7 +30,16 @@ const AddTodo = ({
           })
         );
 
-        localStorage.setItem("notes", JSON.stringify(showNotes));
+        localStorage.setItem(
+          "notes",
+          JSON.stringify(
+            notes.concat({
+              id: parseNumber(notes.length),
+              note: newNote,
+              checked: false,
+            })
+          )
+        );
       }
 
       setNewNote("");
