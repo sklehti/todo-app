@@ -20,12 +20,7 @@ const TodosInfo = ({
       </p>
 
       <div className="mobile-layout hidden lg:block">
-        <SelectedNotes
-          notes={notes}
-          setNotes={setNotes}
-          showNotes={showNotes}
-          setShowNotes={setShowNotes}
-        />
+        <SelectedNotes notes={notes} setShowNotes={setShowNotes} />
       </div>
       <button
         className="px-3 text-gray-500 hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-400"
