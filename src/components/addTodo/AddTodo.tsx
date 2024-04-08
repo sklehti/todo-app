@@ -13,7 +13,8 @@ const AddTodo = ({
 
   const handleNote = () => {
     try {
-      if (toNewNote({ note: newNote, checked: false })) {
+      const checkNoteTyping = toNewNote({ note: newNote, checked: false });
+      if (checkNoteTyping) {
         setNotes(
           notes.concat({
             id: parseNumber(notes.length),
