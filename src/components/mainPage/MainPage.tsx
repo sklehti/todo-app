@@ -38,15 +38,15 @@ const MainPage = () => {
     localStorage.removeItem("theme");
   }, []);
 
-  useEffect(() => {
-    const storageNotes: Note[] = JSON.parse(
-      localStorage.getItem("notes") || '""'
-    );
-    if (storageNotes.length > 0) {
-      setShowNotes(storageNotes);
-      setNotes(storageNotes);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const storageNotes: Note[] = JSON.parse(
+  //     localStorage.getItem("notes") || '""'
+  //   );
+  //   if (storageNotes.length > 0) {
+  //     setShowNotes(storageNotes);
+  //     setNotes(storageNotes);
+  //   }
+  // }, []);
 
   return (
     <div className="font-josefin m-0 p-0 w-screen h-screen box-border bg-gray-100  dark:bg-gray-900 dark:text-white text-dark-grayish-blue">
