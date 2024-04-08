@@ -31,6 +31,8 @@ const AllTodos = ({
 
     setShowNotes(newArray);
     setNotes(newArray);
+
+    localStorage.setItem("notes", JSON.stringify(newArray));
   };
 
   const deleteNote = (e: React.FormEvent<HTMLButtonElement>) => {
@@ -42,6 +44,8 @@ const AllTodos = ({
 
     setShowNotes(newArray);
     setNotes(newArray);
+
+    localStorage.setItem("notes", JSON.stringify(newArray));
   };
 
   const handleDragStart = (e: DragEvent<HTMLDivElement>) => {
@@ -74,6 +78,8 @@ const AllTodos = ({
 
     setShowNotes(copyListItems);
     setNotes(copyMainListItems);
+
+    localStorage.setItem("notes", JSON.stringify(copyMainListItems));
   };
 
   return (

@@ -11,8 +11,6 @@ const AddTodo = ({
 }: AllNotesWithStateHandling) => {
   const [newNote, setNewNote] = useState<string>("");
 
-  console.log(showNotes);
-
   const handleNote = () => {
     try {
       if (toNewNote({ note: newNote, checked: false })) {
@@ -31,6 +29,8 @@ const AddTodo = ({
             checked: false,
           })
         );
+
+        localStorage.setItem("notes", JSON.stringify(showNotes));
       }
 
       setNewNote("");

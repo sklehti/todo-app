@@ -13,6 +13,8 @@ const TodosInfo = ({
     setNotes(newArray);
   };
 
+  console.log(showNotes);
+
   return (
     <div className="relative flex justify-between  flex-row rounded-md w-full p-5 x-2 bg-white dark:bg-gray-700 font-semibold">
       <p className="px-3 text-gray-500 dark:text-gray-300">
