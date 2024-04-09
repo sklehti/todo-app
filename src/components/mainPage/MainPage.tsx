@@ -40,10 +40,13 @@ const MainPage = () => {
 
   useEffect(() => {
     const storageNotes = JSON.parse(localStorage.getItem("notes") || '""');
-    if (storageNotes[1].split(" ")[0] === "dark") {
+    if (
+      localStorage.getItem("notes") &&
+      storageNotes[1].split(" ")[0] === "dark"
+    ) {
       localStorage.theme = "dark";
     }
-    if (storageNotes[0].length > 0) {
+    if (localStorage.getItem("notes") && storageNotes[0].length > 0) {
       setShowNotes(storageNotes[0]);
       setNotes(storageNotes[0]);
     }
