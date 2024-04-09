@@ -17,6 +17,25 @@ const MainPage = () => {
   const [showNotes, setShowNotes] = useState<Note[]>([]);
 
   useEffect(() => {
+    const storageNotes = JSON.parse(localStorage.getItem("notes") || '""');
+
+    console.log("loading page...", storageNotes[1]);
+
+    if (
+      localStorage.getItem("notes") &&
+      (storageNotes[1] === "dark light" || storageNotes[1] === "dark")
+    ) {
+      localStorage.theme = "dark";
+    } else {
+      localStorage.theme = "light";
+    }
+    if (localStorage.getItem("notes") && storageNotes[0].length > 0) {
+      setShowNotes(storageNotes[0]);
+      setNotes(storageNotes[0]);
+    }
+  }, []);
+
+  useEffect(() => {
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
     if (
       localStorage.theme === "dark" ||
@@ -36,25 +55,6 @@ const MainPage = () => {
 
     // Whenever the user explicitly chooses to respect the OS preference
     localStorage.removeItem("theme");
-  }, []);
-
-  //TODO:
-  useEffect(() => {
-    const storageNotes = JSON.parse(localStorage.getItem("notes") || '""');
-
-    console.log("loading page...", storageNotes[1]);
-
-    if (
-      localStorage.getItem("notes") &&
-      storageNotes[1].length > 0 &&
-      storageNotes[1] === "dark light"
-    ) {
-      localStorage.theme = "dark";
-    }
-    if (localStorage.getItem("notes") && storageNotes[0].length > 0) {
-      setShowNotes(storageNotes[0]);
-      setNotes(storageNotes[0]);
-    }
   }, []);
 
   return (
