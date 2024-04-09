@@ -76,7 +76,7 @@ const MainPage = () => {
       />
 
       <div className="fixed top-0 min-w-full flex justify-center flex-row">
-        <div className="w-4/5 max-w-2xl h-screen overflow-y-scroll box-content no-scrollbar">
+        <div className="w-4/5 max-w-2xl h-screen p-5 overflow-y-scroll box-content no-scrollbar">
           <Header />
           <main>
             <AddTodo

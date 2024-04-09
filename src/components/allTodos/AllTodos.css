@@ -6,9 +6,6 @@
   .todo-input {
     padding-left: 60px;
   }
-  .todo-input:checked {
-    color: red;
-  }
 
   .checkbox-input:checked ~ .checkmark {
     background-image: url();

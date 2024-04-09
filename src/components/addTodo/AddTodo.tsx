@@ -54,7 +54,7 @@ const AddTodo = ({
   };
 
   return (
-    <section className="relative flex justify-center flex-col">
+    <section className="relative flex justify-center flex-col shadow-lg">
       <input
         autoFocus
         type="text"

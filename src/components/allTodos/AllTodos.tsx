@@ -83,7 +83,7 @@ const AllTodos = ({
   };
 
   return (
-    <section className="my-6 rounded-md bg-white dark:bg-gray-700 box-border">
+    <section className="my-6 rounded-md bg-white dark:bg-gray-700 box-border z-10 shadow-lg">
       {showNotes.map((n, index) => (
         <React.Fragment key={index}>
           <div
