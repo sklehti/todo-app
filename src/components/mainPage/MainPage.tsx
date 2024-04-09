@@ -38,8 +38,13 @@ const MainPage = () => {
     localStorage.removeItem("theme");
   }, []);
 
+  //TODO:
   useEffect(() => {
     const storageNotes = JSON.parse(localStorage.getItem("notes") || '""');
+    setTimeout(() => {
+      console.log("loading page...");
+    }, 3000);
+
     if (
       localStorage.getItem("notes") &&
       storageNotes[1].length > 0 &&
