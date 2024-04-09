@@ -116,7 +116,6 @@ const AllTodos = ({
                   className="opacity-0 cursor-pointer checkbox-input"
                 />
                 <div
-                  aria-hidden="true"
                   tabIndex={0}
                   id={n.note}
                   role="checkbox"

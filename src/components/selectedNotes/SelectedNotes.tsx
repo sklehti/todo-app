@@ -26,18 +26,21 @@ const SelectedNotes = ({ notes, setShowNotes }: SelectedNotesProp) => {
   return (
     <>
       <button
+        tabIndex={0}
         onClick={handleAll}
-        className="px-3  text-gray-500 focus:text-indigo-500 hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-400 dark:focus:text-indigo-500"
+        className="px-3  text-gray-500 focus:text-indigo-500  hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-400 dark:focus:text-indigo-500"
       >
         All
       </button>
       <button
+        tabIndex={0}
         onClick={handleActive}
         className="px-3  text-gray-500 focus:text-indigo-500 hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-400 dark:focus:text-indigo-500"
       >
         Active
       </button>
       <button
+        tabIndex={0}
         onClick={handleCompleted}
         className="px-3  text-gray-500 focus:text-indigo-500 hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-400 dark:focus:text-indigo-500"
       >
