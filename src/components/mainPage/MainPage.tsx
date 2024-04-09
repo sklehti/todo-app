@@ -41,21 +41,20 @@ const MainPage = () => {
   //TODO:
   useEffect(() => {
     const storageNotes = JSON.parse(localStorage.getItem("notes") || '""');
-    setTimeout(() => {
-      console.log("loading page...");
 
-      if (
-        localStorage.getItem("notes") &&
-        storageNotes[1].length > 0 &&
-        storageNotes[1].split(" ")[0] === "dark"
-      ) {
-        localStorage.theme = "dark";
-      }
-      if (localStorage.getItem("notes") && storageNotes[0].length > 0) {
-        setShowNotes(storageNotes[0]);
-        setNotes(storageNotes[0]);
-      }
-    }, 2000);
+    console.log("loading page...", storageNotes[1]);
+
+    if (
+      localStorage.getItem("notes") &&
+      storageNotes[1].length > 0 &&
+      storageNotes[1] === "dark light"
+    ) {
+      localStorage.theme = "dark";
+    }
+    if (localStorage.getItem("notes") && storageNotes[0].length > 0) {
+      setShowNotes(storageNotes[0]);
+      setNotes(storageNotes[0]);
+    }
   }, []);
 
   return (
