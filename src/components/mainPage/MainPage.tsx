@@ -39,12 +39,13 @@ const MainPage = () => {
   }, []);
 
   useEffect(() => {
-    const storageNotes: Note[] = JSON.parse(
-      localStorage.getItem("notes") || '""'
-    );
-    if (storageNotes.length > 0) {
-      setShowNotes(storageNotes);
-      setNotes(storageNotes);
+    const storageNotes = JSON.parse(localStorage.getItem("notes") || '""');
+    if (storageNotes[1].split(" ")[0] === "dark") {
+      localStorage.theme = "dark";
+    }
+    if (storageNotes[0].length > 0) {
+      setShowNotes(storageNotes[0]);
+      setNotes(storageNotes[0]);
     }
   }, []);
 
@@ -77,7 +78,7 @@ const MainPage = () => {
 
       <div className="fixed top-0 min-w-full flex justify-center flex-row">
         <div className="w-4/5 max-w-2xl h-screen p-5 overflow-y-scroll box-content no-scrollbar">
-          <Header />
+          <Header notes={notes} />
           <main>
             <AddTodo
               notes={notes}

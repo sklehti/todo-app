@@ -12,7 +12,10 @@ const TodosInfo = ({
     setShowNotes(newArray);
     setNotes(newArray);
 
-    localStorage.setItem("notes", JSON.stringify(newArray));
+    localStorage.setItem(
+      "notes",
+      JSON.stringify([newArray, document.documentElement.classList.value])
+    );
   };
 
   console.log(showNotes);

@@ -11,4 +11,9 @@
     background-image: url();
     background: linear-gradient(to bottom right, #57ddff, #c058f3);
   }
+
+  .filter-text {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7448%)
+      hue-rotate(279deg) brightness(96%) contrast(111%);
+  }
 }

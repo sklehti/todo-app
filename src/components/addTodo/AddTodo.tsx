@@ -35,13 +35,14 @@ const AddTodo = ({
 
         localStorage.setItem(
           "notes",
-          JSON.stringify(
+          JSON.stringify([
             notes.concat({
               id: parseNumber(notes.length),
               note: newNote,
               checked: false,
-            })
-          )
+            }),
+            document.documentElement.classList.value,
+          ])
         );
       }
 

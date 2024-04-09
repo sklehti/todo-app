@@ -32,7 +32,10 @@ const AllTodos = ({
     setShowNotes(newArray);
     setNotes(newArray);
 
-    localStorage.setItem("notes", JSON.stringify(newArray));
+    localStorage.setItem(
+      "notes",
+      JSON.stringify([newArray, document.documentElement.classList.value])
+    );
   };
 
   const deleteNote = (e: React.FormEvent<HTMLButtonElement>) => {
@@ -45,7 +48,10 @@ const AllTodos = ({
     setShowNotes(newArray);
     setNotes(newArray);
 
-    localStorage.setItem("notes", JSON.stringify(newArray));
+    localStorage.setItem(
+      "notes",
+      JSON.stringify([newArray, document.documentElement.classList.value])
+    );
   };
 
   const handleDragStart = (e: DragEvent<HTMLDivElement>) => {
@@ -79,7 +85,13 @@ const AllTodos = ({
     setShowNotes(copyListItems);
     setNotes(copyMainListItems);
 
-    localStorage.setItem("notes", JSON.stringify(copyMainListItems));
+    localStorage.setItem(
+      "notes",
+      JSON.stringify([
+        copyMainListItems,
+        document.documentElement.classList.value,
+      ])
+    );
   };
 
   return (
@@ -134,11 +146,15 @@ const AllTodos = ({
             </div>
 
             <button
-              className="flex items-center p-5 hover:bg-slate-100"
+              className="flex items-center p-5 hover:bg-slate-300 hover:rounded-md"
               value={n.note}
               onClick={deleteNote}
             >
-              <img src={crossIcon} className="w-3 h-3" alt="delete button" />
+              <img
+                src={crossIcon}
+                className="w-3 h-3 dark:filter-text"
+                alt="delete button"
+              />
             </button>
           </div>
           <hr className="dark:border-[#777A92]" />

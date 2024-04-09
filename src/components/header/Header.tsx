@@ -1,13 +1,23 @@
 import lightModeIcon from "../../assets/images/icon-moon.svg";
 import darkModeIcon from "../../assets/images/icon-sun.svg";
+import { Note } from "../../types";
 
 import "../header/Header.css";
 
-const Navbar = () => {
+interface Prop {
+  notes: Note[];
+}
+
+const Header = ({ notes }: Prop) => {
   const handleScreenMode = () => {
     const root = window.document.documentElement;
     root.classList.toggle("dark");
     root.classList.toggle("light");
+
+    localStorage.setItem(
+      "notes",
+      JSON.stringify([notes, document.documentElement.classList.value])
+    );
   };
   return (
     <header className="flex justify-between flex-row mt-14 mb-6">
@@ -28,4 +38,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;
