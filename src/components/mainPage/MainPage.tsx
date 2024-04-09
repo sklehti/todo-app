@@ -42,6 +42,7 @@ const MainPage = () => {
     const storageNotes = JSON.parse(localStorage.getItem("notes") || '""');
     if (
       localStorage.getItem("notes") &&
+      storageNotes[1].length > 0 &&
       storageNotes[1].split(" ")[0] === "dark"
     ) {
       localStorage.theme = "dark";
