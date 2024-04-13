@@ -11,8 +11,8 @@ const AllTodos = ({
   showNotes,
   setShowNotes,
 }: AllNotesWithStateHandling) => {
-  const dragItem: any = React.useRef<HTMLInputElement>(null);
-  const dragOverItem: any = React.useRef<HTMLInputElement>(null);
+  const dragItem: any = React.useRef<HTMLDivElement>(null);
+  const dragOverItem: any = React.useRef<HTMLDivElement>(null);
 
   const handleClickEvent = (e: React.MouseEvent<HTMLInputElement>) => {
     handleCheckbox(e.currentTarget.id);
@@ -54,11 +54,15 @@ const AllTodos = ({
     );
   };
 
-  const handleDragStart = (e: DragEvent<HTMLDivElement>) => {
+  const handleDragStart = (
+    e: DragEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>
+  ) => {
     dragItem.current = e.currentTarget.id;
   };
 
-  const handleDragEnter = (e: DragEvent<HTMLDivElement>) => {
+  const handleDragEnter = (
+    e: DragEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>
+  ) => {
     dragOverItem.current = e.currentTarget.id;
   };
 
@@ -104,6 +108,8 @@ const AllTodos = ({
             onDragStart={handleDragStart}
             onDragEnter={handleDragEnter}
             onDragOver={(e) => e.preventDefault()}
+            onTouchStart={handleDragStart}
+            onTouchEnd={handleDragEnter}
             onDragEnd={drop}
             id={index.toString()}
           >
